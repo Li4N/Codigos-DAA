@@ -21,9 +21,7 @@ def numRegHomogeneasAux (matriz, iniFilas, finFilas, iniColumnas, finColumnas):
                numRegHomogeneasAux (matriz, mitadFilas+1, finFilas, mitadColumnas+1, finColumnas)
 def numRegHomogeneas (matriz):
     return numRegHomogeneasAux (matriz, 0, len (matriz)-1, 0, len (matriz[0])-1)
-
 ######################################## DYV MERGESORT ######################################################################
-
 def DyVMergeSort (vector, ini, fin):
     if (ini==fin):
         return [vector[ini]]
@@ -82,7 +80,6 @@ def DyVMergeSort (vector, ini, fin):
             j = j + 1
 
         return nuevo
-
 ############################################## DYV MAXIMO Y MINIMO ################################################################
 def DyVMaxMin (vector, ini, fin):
     if (ini==fin): #Caso base. Conquista
@@ -103,7 +100,6 @@ def DyVMaxMin (vector, ini, fin):
         else:
             resultado[1] = resultado2[1]
         return resultado
-
 ######################################### DYV CIFRASCOMUNES #####################################################################
 def ExtraerCifras (numero):
     resultado = [False]*10
@@ -141,7 +137,7 @@ for i in range (len(resultado)-1):
             print (i, end="")
         else:
             print (i, end=" ")
-##############################################DYV ELEMENTO MAYORITARIO ################################################################
+############################################## DYV ELEMENTO MAYORITARIO ################################################################
 def DyVMayoritario (vector, ini, fin):
     if (ini==fin):
         return [True, vector[ini]]
@@ -199,8 +195,7 @@ def BTPasarTodas(laberinto, pos_x_actual, pos_y_actual, mov_rel_x, mov_rel_y, N,
                 pasos[0] -= 1
         intento += 1
     return exito
-
-##################################### CUALQUIER SOLUCION ########################################################################
+##################################### BT CUALQUIER SOLUCION ########################################################################
 def BT (tablero, pos_x_actual,pos_y_actual, mov_rel_x, mov_rel_y, N):
     exito=False
     intento=0
@@ -221,7 +216,7 @@ def BT (tablero, pos_x_actual,pos_y_actual, mov_rel_x, mov_rel_y, N):
                 tablero[nueva_x][nueva_y]=' '
         intento=intento+1
     return exito
-########################################### MEJRO SOLUCION ###################################################################   
+########################################### BT MEJOR SOLUCION ###################################################################   
 def esFactible(plano, pos_x_actual, pos_y_actual, mov_rel_x, mov_rel_y, p, nueva_x, nueva_y, n, m, contValor):
     if nueva_x>=0 and nueva_x<n and nueva_y>=0 and nueva_y<m and (plano[nueva_x][nueva_y] == contValor[0] or plano[nueva_x][nueva_y] == 0) : 
             return True
@@ -262,7 +257,7 @@ def BTMejorSol(plano, pos_x_actual,pos_y_actual, mov_rel_x, mov_rel_y, p, n, m, 
             if (valorViejo != 0): # si necesitas buscar un valor exacto, esta cond seria valorViejo == cont[0]-1 (valor anterior)
                 contValor[0] -= 1
         intento += 1
-############################################# TODAS SOLUCIONES #################################################################
+############################################# BT TODAS SOLUCIONES #################################################################
 def BTTodasSol (tablero, pos_x_actual,pos_y_actual, mov_rel_x, mov_rel_y, N):
     intento=0
     while intento<=3:
