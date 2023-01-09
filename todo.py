@@ -51,35 +51,6 @@ def DyVMergeSort (vector, ini, fin):
             j = j + 1
 
         return nuevo
-def DyVMergeSort (vector, ini, fin):
-    if (ini==fin):
-        return [vector[ini]]
-    else:
-        mitad = (ini+fin)//2
-        vectorIzqOrdenado=DyVMergeSort(vector, ini, mitad)
-        vectorDerOrdenado=DyVMergeSort(vector, mitad+1, fin)
-        #Vamos a combinar las dos partes ya ordenadas en un nuevo vector que devolveremos
-
-        nuevo=[]
-        i=0
-        j=0
-        while (i<len (vectorIzqOrdenado)) and (j<len (vectorDerOrdenado)):
-            #Vamos a tomar un valor del que sea mas pequeño
-            if (vectorIzqOrdenado[i]<vectorDerOrdenado[j]):
-                nuevo.append(vectorIzqOrdenado[i])
-                i=i+1
-            else:
-                nuevo.append(vectorDerOrdenado[j])
-                j= j + 1
-        #Cuando llegamos aquí, una de las dos mitades aun tendrá elementos que hay que pasar a nuevo
-        while (i < len(vectorIzqOrdenado)):
-            nuevo.append(vectorIzqOrdenado[i])
-            i = i + 1
-        while (j<len (vectorDerOrdenado)):
-            nuevo.append(vectorDerOrdenado[j])
-            j = j + 1
-
-        return nuevo
 ############################################## DYV MAXIMO Y MINIMO ################################################################
 def DyVMaxMin (vector, ini, fin):
     if (ini==fin): #Caso base. Conquista
